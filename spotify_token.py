@@ -1,5 +1,21 @@
 import requests as r
 import re
+import json
+
+
+file_path = '/Users/matillionuser/Desktop/python/admin/spotify_clientidsecret.json'
+
+# Read the entire JSON content
+with open(file_path, 'r') as json_file:
+    data = json.load(json_file)
+
+# Access specific elements in the JSON data
+client_id = data.get('client_id')
+client_secret = data.get('client_secret')
+
+# Print the values
+print(f"Client ID: {client_id}")
+print(f"Client Secret: {client_secret}")
 
 post_url = "https://accounts.spotify.com/api/token"
 
@@ -7,7 +23,7 @@ h = {
     "Content-Type": "application/x-www-form-urlencoded"
 }
 
-d = 'grant_type=client_credentials&client_id=7199d571ed484bd7912f30c26482bbeb&client_secret=e431e476019c4927a6a7329ad8b79dfa'
+d = 'grant_type=client_credentials&client_id='+client_id+'&client_secret='+client_secret
 
 token_r = r.post(post_url,
                   headers=h,
