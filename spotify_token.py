@@ -37,6 +37,11 @@ token_val = re.search('''"access_token":"(.*)","token_type":"Bearer","expires_in
 print(token_val.group(1))
 token_val = token_val.group(1)
 
+file_path = '/Users/matillionuser/Desktop/python/admin/spotify_accesstoken.txt'
 
-with open('token_val.csv', 'w') as out:
+with open(file_path, 'w') as out:
     out.write(token_val)
+
+with open(file_path, 'r') as text_file:
+    content = text_file.read()
+    print('Token:',content)
