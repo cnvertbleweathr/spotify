@@ -67,7 +67,7 @@ def get_user_playlists(access_token, limit=10):
         return None
 
 # Replace "your_access_token" with a valid access token
-access_token = 'BQDhXMrl0qmZ02c-c5na6OLhxzsVABHheDN0c090d4mUrE2ZoIs5RX3bZX0MDaHrH9_YfGRjRuwTtva4_dfW6IopWZqELM8GqlnjZeP0u81RHL8pUd8b1AAKhX2A_3CtHW4AA9RpKjOr95HwkP1_c3A'
+access_token = token_val
 
 # Call the function to get the user's playlists
 user_playlists = get_user_playlists(access_token)
